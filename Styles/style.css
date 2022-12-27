@@ -1,0 +1,38 @@
+h1 {
+  color: #6c757d;
+  font-family: "Caveat", cursive;
+  font-size: 80px;
+}
+.hover {
+  cursor: pointer;
+}
+.weatherDetails {
+  color: #6c757d;
+  opacity: 80%;
+  font-family: "Caveat", cursive;
+}
+.mainBox {
+  display: block;
+  margin: 50px auto;
+}
+.bigThumbnail {
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+}
+.thumbnail {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+.searchbar {
+  width: 100%;
+  height: 30px;
+}
+.searchButton {
+  padding: 0px 0.75rem;
+}
+.weekday {
+  color: #6c757d;
+  text-align: center;
+}
