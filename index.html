@@ -53,19 +53,20 @@
             ><span id="ForC">°C</span> with <span id="description"></span> in
             <span id="city-name"></span>
           </h1>
-          <span id="date-of-the-day"></span>
-          <p class="currentDetails">
-            humidity: <span id="humidity"></span>% | wind:
-            <span id="wind"></span>km/h
-            <br />
-            <button
-              type="button"
-              class="btn btn-secondary btn-sm"
-              id="geolocation-detector"
-            >
-              detect my current location
-            </button>
-          </p>
+          <ul class="detailList">
+            <li id="date-of-the-day">date</li>
+            <li>humidity: <span id="humidity"></span>%</li>
+            <li>wind: <span id="wind"></span>km/h</li>
+          </ul>
+          <br />
+          <button
+            type="button"
+            class="btn btn-secondary btn-sm"
+            id="geolocation-detector"
+          >
+            detect my current location
+          </button>
+
           <!-- <span id="farenheit" class="hover">˚F</span> /
           <span id="celsius" class="hover">˚C</span> -->
         </div>
