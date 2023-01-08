@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vandah's Weatherapp</title>
     <link rel="stylesheet" href="Styles/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,10 +23,10 @@
   <body>
     <div class="container mainBox">
       <div
-        class="row border border-bottom-0 border-secondary border-5 rounded px-1 py-1"
+        class="row border border-secondary border-5 rounded px-1 py-1 pt-2 boxOne"
       >
-        <nav class="navbar bg-light">
-          <div class="container-fluid">
+        <nav class="navbar bg-light p-0">
+          <div class="container-fluid p-0 pb-3 searchBox">
             <form class="d-flex searchbar" role="search" id="city-search-form">
               <input
                 class="form-control me-"
@@ -39,7 +39,7 @@
                 <button
                   id="city-search-button"
                   type="button"
-                  class="btn btn-secondary searchButton"
+                  class="btn btn-secondary searchButton pt-0"
                 >
                   search
                 </button>
@@ -50,9 +50,14 @@
         <div class="col-6 currentday">
           <h1>
             currently <span id="temperature"></span
-            ><span id="ForC">°C</span> with <span id="description"></span> in
+            ><span id="f-or-c">°C</span> with <span id="description"></span> in
             <span id="city-name"></span>
           </h1>
+
+          <div class="units">
+            <a href="" class="unitLetter active" id="celsius-link">C</a> |
+            <a href="" class="unitLetter" id="farenheit-link">F</a>
+          </div>
           <ul class="detailList">
             <li id="date-of-the-day">date</li>
             <li>humidity: <span id="humidity"></span>%</li>
@@ -61,7 +66,7 @@
           <br />
           <button
             type="button"
-            class="btn btn-secondary btn-sm"
+            class="btn btn-secondary btn-sm geoloc-button"
             id="geolocation-detector"
           >
             detect my current location
@@ -70,9 +75,18 @@
           <!-- <span id="farenheit" class="hover">˚F</span> /
           <span id="celsius" class="hover">˚C</span> -->
         </div>
-        <img src="Thumbnails/rainy.png" alt="" class="col-6 bigThumbnail" />
+
+        <img
+          src="Thumbnails/simba/sunny-big-simba.png"
+          alt=""
+          class="col-6 bigThumbnail"
+          id="icon-code"
+        />
       </div>
-      <div class="row border border-secondary border-5 rounded px-2 py-3">
+
+      <!-- <div
+        class="row border border-secondary border-5 rounded px-2 py-3 boxTwo"
+      >
         <div class="col-2 border-end border-2 px-1">
           <h3 class="weekday">sat</h3>
           <img class="thumbnail" src="Thumbnails/cloud&sun.png" alt="" />
@@ -97,7 +111,7 @@
           <h3 class="weekday">thu</h3>
           <img class="thumbnail" src="Thumbnails/snow.png" alt="" />
         </div>
-      </div>
+      </div> -->
       <a href="https://github.com/noisykilljoy/projet-un" class="githublink"
         >project github</a
       >

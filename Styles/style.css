@@ -1,36 +1,58 @@
 h1 {
-  color: #6c757d;
+  color: #292c30;
   font-family: "Caveat", cursive;
-  font-size: 40px;
-  margin: 10px 10px 0px 0px;
+  font-size: 38px;
+  margin: auto 10px;
 }
 .hover {
   cursor: pointer;
 }
-.weatherDetails {
-  color: #6c757d;
+/* .weatherDetails {
+  color: #292c30;
   opacity: 80%;
   font-family: "Caveat", cursive;
-}
+} */
 .detailList {
   margin: auto 10px;
   padding: 0;
   list-style: none;
-  color: #6c757d;
+  color: #292c30;
   opacity: 80%;
   font-family: "Caveat", cursive;
   font-size: 20px;
 }
-.mainBox {
+/* .mainBox {
   max-width: 600px;
   max-height: 600px;
   display: block;
   margin: 50px auto;
   padding: 20px;
+} */
+.mainBox {
+  display: block;
+  margin: 50px auto;
 }
+.boxOne {
+  background-color: #87a7d6;
+  max-width: 600px;
+}
+.searchBox {
+  background-color: #87a7d6;
+}
+.units {
+  font-size: 22px;
+  color: #292c30;
+  margin: auto 10px;
+  font-family: "Caveat", cursive;
+}
+.boxTwo {
+  background-color: #60ddea;
+  max-width: 600px;
+}
+
 .bigThumbnail {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 50%;
+  max-height: 250px;
   display: block;
   margin: 0 auto;
 }
@@ -44,12 +66,26 @@ h1 {
   height: 30px;
 }
 .searchButton {
-  padding: 0px 0.75rem;
+  max-height: 30px;
+}
+.unitLetter {
+  color: #292c30;
+  cursor: default;
+  text-decoration: none;
+}
+.unitLetter:hover {
+  color: #292c30;
 }
 .weekday {
-  color: #6c757d;
+  color: #292c30;
   text-align: center;
+}
+.geoloc-button {
+  margin: 0px 10px 10px 0px;
 }
 .githublink {
   color: black;
+}
+.active {
+  color: #aebfff;
 }

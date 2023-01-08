@@ -34,7 +34,7 @@ function displayDate() {
 
   return result;
 }
-let dateDisplayer = document.querySelector("span#date-of-the-day");
+let dateDisplayer = document.querySelector("#date-of-the-day");
 let dateOfTheDay = displayDate();
 dateDisplayer.innerHTML = dateOfTheDay;
 
@@ -69,21 +69,24 @@ function cityChangerWithGeolocation(event) {
 function weatherFunc(response) {
   console.log(response.data);
   let city = response.data.name;
-  let temp = Math.round(response.data.main.temp);
+  celsiusTemp = Math.round(response.data.main.temp);
   let descrip = response.data.weather[0].description;
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
+  let weatherIcon = response.data.weather[0].icon;
 
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = city;
   let tempDisplay = document.querySelector("#temperature");
-  tempDisplay.innerHTML = temp;
+  tempDisplay.innerHTML = celsiusTemp;
   let descripDisplay = document.querySelector("#description");
   descripDisplay.innerHTML = descrip;
   let windDisplay = document.querySelector("#wind");
   windDisplay.innerHTML = wind;
   let humidityDisplay = document.querySelector("#humidity");
   humidityDisplay.innerHTML = humidity;
+  let weatherIconCode = document.querySelector("#icon-code");
+  weatherIconCode.setAttribute("src", `Thumbnails/simba/${weatherIcon}.png`);
 }
 
 //parameter changer
@@ -102,3 +105,31 @@ function weatherFunc(response) {
 // }
 // let toCelsiusTempConverter = document.querySelector("#celsius");
 // toCelsiusTempConverter.addEventListener("click", convertCtoF);
+
+function showFarenheit(event) {
+  event.preventDefault();
+  let tempDisplay = document.querySelector("#temperature");
+  let tempInFarenheit = Math.round((celsiusTemp * 9) / 5 + 32);
+  tempDisplay.innerHTML = tempInFarenheit;
+  let degreeUnit = document.querySelector("#f-or-c");
+  degreeUnit.innerHTML = "˚F";
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+}
+function showCelsius(event) {
+  event.preventDefault();
+  let tempDisplay = document.querySelector("#temperature");
+  tempDisplay.innerHTML = celsiusTemp;
+  let degreeUnit = document.querySelector("#f-or-c");
+  degreeUnit.innerHTML = "˚C";
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+}
+
+let farenheitLink = document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", showFarenheit);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
+
+let celsiusTemp = null;
+let FarenheitTemp = null;
