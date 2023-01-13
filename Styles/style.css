@@ -1,7 +1,5 @@
 @font-face {
-  font-family: "FARSI-INSPIRED Regular";
-  font-style: normal;
-  font-weight: normal;
+  font-family: "Farsi-Inspired";
   /* src: local("FARSI-INSPIRED Regular"),
     url("Farsi-Inspired.woff") format("woff"); */
   src: url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
@@ -25,6 +23,7 @@ h1 {
   font-family: "Farsi-inspired";
   font-size: 20px;
   margin: auto 10px;
+  text-align: center;
 }
 .hover {
   cursor: pointer;
@@ -37,6 +36,7 @@ h1 {
 .detailList {
   margin: auto 10px;
   padding: 0;
+  text-align: center;
   list-style: none;
   color: #292c30;
   opacity: 80%;
