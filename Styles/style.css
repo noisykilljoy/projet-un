@@ -4,11 +4,20 @@
   font-weight: normal;
   /* src: local("FARSI-INSPIRED Regular"),
     url("Farsi-Inspired.woff") format("woff"); */
-  src: url("Farsi-Inspired.woff") format("embedded-opentype"),
-    /* Internet Explorer */ url("Farsi-Inspired.woff") format("woff2"),
-    /* Super Modern Browsers */ url("Farsi-Inspired.woff") format("woff"),
-    /* Pretty Modern Browsers */ url("Farsi-Inspired.woff") format("truetype"),
-    /* Safari, Android, iOS */ url("Farsi-Inspired.woff") format("svg"); /* Legacy iOS */
+  src: url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
+      format("embedded-opentype"),
+    /* Internet Explorer */
+      url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
+      format("woff"),
+    /* Pretty Modern Browsers */
+      url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
+      format("svg"); /* Legacy iOS */
 }
 
 h1 {
