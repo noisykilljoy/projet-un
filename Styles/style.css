@@ -29,7 +29,7 @@
   margin: 50px auto 0 auto;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   background-color: transparent !important;
-  background-image: url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/Thumbnails/forecast/bg.png");
+  background-image: url("/Thumbnails/forecast/bg.png");
 }
 
 .bigThumbnail {
