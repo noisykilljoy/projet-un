@@ -1,7 +1,12 @@
 h1 {
   color: #292c30;
-  font-family: "Caveat", cursive;
-  font-size: 38px;
+
+  font-family: "FARSI-INSPIRED Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("FARSI-INSPIRED Regular"),
+    url("Farsi-Inspired.woff") format("woff");
+  font-size: 20px;
   margin: auto 10px;
 }
 .hover {
@@ -10,7 +15,7 @@ h1 {
 /* .weatherDetails {
   color: #292c30;
   opacity: 80%;
-  font-family: "Caveat", cursive;
+  font-family: 'EB Garamond', serif;;
 } */
 .detailList {
   margin: auto 10px;
@@ -18,8 +23,8 @@ h1 {
   list-style: none;
   color: #292c30;
   opacity: 80%;
-  font-family: "Caveat", cursive;
-  font-size: 20px;
+  font-family: "Farsi-inspired";
+  font-size: 15px;
 }
 /* .mainBox {
   max-width: 600px;
@@ -33,26 +38,25 @@ h1 {
   margin: 50px auto;
 }
 .boxOne {
-  background-color: #87a7d6;
-  max-width: 600px;
+  background-color: #efefef;
+  max-width: 300px;
 }
 .searchBox {
-  background-color: #87a7d6;
+  background-color: #efefef;
 }
 .units {
-  font-size: 22px;
+  font-size: 18px;
   color: #292c30;
   margin: auto 10px;
-  font-family: "Caveat", cursive;
+  font-family: "Farsi-inspired";
 }
 .boxTwo {
   background-color: #60ddea;
-  max-width: 600px;
+  max-width: 300px;
 }
 
 .bigThumbnail {
-  max-width: 50%;
-  max-height: 250px;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
 }
@@ -79,6 +83,7 @@ h1 {
 .weekday {
   color: #292c30;
   text-align: center;
+  font-family: "Farsi-inspired";
 }
 .geoloc-button {
   margin: 0px 10px 10px 0px;
