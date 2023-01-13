@@ -74,7 +74,6 @@ function cityChanger(event) {
 // }
 
 function weatherFunc(response) {
-  console.log(response.data);
   let city = response.data.name;
   celsiusTemp = Math.round(response.data.main.temp);
   let descrip = response.data.weather[0].description;
@@ -106,8 +105,6 @@ function getForecast(coordinates) {
 }
 
 function displayForecast(response) {
-  console.log(response);
-
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -150,9 +147,7 @@ function displayForecast(response) {
           </div>
         </div>`;
     }
-    console.log(dailyForecast);
   });
-  console.log(forecastHTML);
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
