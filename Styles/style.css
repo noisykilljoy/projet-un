@@ -65,7 +65,7 @@ h1 {
   font-family: "Farsi-inspired";
 } */
 .boxTwo {
-  background-image: url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/Thumbnails/forecast/bg.png");
+  background-image: url("/Thumbnails/forecast/bg.png");
 
   max-width: 300px;
 }
