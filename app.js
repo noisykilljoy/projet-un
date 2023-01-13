@@ -1,5 +1,17 @@
 //current date display
 let now = new Date();
+let dateDisplayer = document.querySelector("#date-of-the-day");
+let dateOfTheDay = displayDate();
+dateDisplayer.innerHTML = dateOfTheDay;
+
+//search engine
+let usersSearchedCity = document.querySelector("#city-search-form");
+usersSearchedCity.addEventListener("submit", cityChanger);
+let usersSearchedCity2 = document.querySelector("#city-search-button");
+usersSearchedCity2.addEventListener("click", cityChanger);
+let usersGeolocation = document.querySelector("#geolocation-detector");
+usersGeolocation.addEventListener("click", cityChangerWithGeolocation);
+
 function displayDate() {
   let days = [
     "Monday",
@@ -34,18 +46,12 @@ function displayDate() {
 
   return result;
 }
-let dateDisplayer = document.querySelector("#date-of-the-day");
-let dateOfTheDay = displayDate();
-dateDisplayer.innerHTML = dateOfTheDay;
-
-//search engine
-let usersSearchedCity = document.querySelector("#city-search-form");
-usersSearchedCity.addEventListener("submit", cityChanger);
-let usersSearchedCity2 = document.querySelector("#city-search-button");
-usersSearchedCity2.addEventListener("click", cityChanger);
-let usersGeolocation = document.querySelector("#geolocation-detector");
-usersGeolocation.addEventListener("click", cityChangerWithGeolocation);
-
+function displayTime(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
 function cityChanger(event) {
   let cityInput = document.querySelector("#city-search-input");
   event.preventDefault();
@@ -74,6 +80,7 @@ function weatherFunc(response) {
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
   let weatherIcon = response.data.weather[0].icon;
+  let latlong = response.data.coord;
 
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = city;
@@ -86,25 +93,68 @@ function weatherFunc(response) {
   let humidityDisplay = document.querySelector("#humidity");
   humidityDisplay.innerHTML = humidity;
   let weatherIconCode = document.querySelector("#icon-code");
-  weatherIconCode.setAttribute("src", `Thumbnails/simba/${weatherIcon}.png`);
+  weatherIconCode.setAttribute("src", `Thumbnails/weather/${weatherIcon}.png`);
+
+  getForecast(latlong);
 }
 
-//parameter changer
-// function convertFtoC(event) {
-//   event.preventDefault();
-//   let cityTemperature = document.querySelector("#temperature");
-//   cityTemperature.innerHTML = "66";
-// }
-// let toFarenheitTempConverter = document.querySelector("#farenheit");
-// toFarenheitTempConverter.addEventListener("click", convertFtoC);
+function getForecast(coordinates) {
+  let apiKey = "aa4oftad8baaee9e63b2667c02fe71b9";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayForecast);
+}
 
-// function convertCtoF(event) {
-//   event.preventDefault();
-//   let cityTemperature = document.querySelector("#temperature");
-//   cityTemperature.innerHTML = "17";
-// }
-// let toCelsiusTempConverter = document.querySelector("#celsius");
-// toCelsiusTempConverter.addEventListener("click", convertCtoF);
+function displayForecast(response) {
+  console.log(response);
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let dailyForecast = response.data.daily;
+  dailyForecast.forEach(function (dailyForecast, index) {
+    if (index < 3) {
+      forecastHTML += `<div class="col-4 weather-forecast">
+          <h3 class="weekday">${displayTime(dailyForecast.time)}</h3>
+          <img class="thumbnail" src="Thumbnails/forecast/${
+            dailyForecast.condition.icon
+          }.png" alt="" />
+          <div class="forecast-temps">
+            <span class="forecast-low">${Math.round(
+              dailyForecast.temperature.minimum
+            )}˚</span> | 
+            <span class="forecast-high">${Math.round(
+              dailyForecast.temperature.maximum
+            )}˚</span>
+          </div>
+        </div>`;
+    }
+    if (index === 3) {
+      forecastHTML += `
+    <hr />
+    `;
+    }
+    if (index >= 3 && index < 6) {
+      forecastHTML += `<div class="col-4 weather-forecast">
+          <h3 class="weekday">${displayTime(dailyForecast.time)}</h3>
+          <img class="thumbnail" src="Thumbnails/forecast/${
+            dailyForecast.condition.icon
+          }.png" alt="" />
+          <div class="forecast-temps">
+            <span class="forecast-low">${Math.round(
+              dailyForecast.temperature.minimum
+            )}˚</span> | 
+            <span class="forecast-high">${Math.round(
+              dailyForecast.temperature.maximum
+            )}˚</span>
+          </div>
+        </div>`;
+    }
+    console.log(dailyForecast);
+  });
+  console.log(forecastHTML);
+  forecastHTML += `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showFarenheit(event) {
   event.preventDefault();
@@ -133,3 +183,5 @@ celsiusLink.addEventListener("click", showCelsius);
 
 let celsiusTemp = null;
 let FarenheitTemp = null;
+
+displayForecast();

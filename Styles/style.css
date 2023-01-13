@@ -7,13 +7,15 @@
     /* Super Modern Browsers */ url("/fonts/Farsi-Inspired.woff") format("woff"),
     /* Pretty Modern Browsers */ url("/fonts/Farsi-Inspired.woff")
       format("truetype"),
-    /* Safari, Android, iOS */ url("/fonts/Farsi-Inspired.woff") format("svg"); /* Legacy iOS */
+    /* Safari, Android, iOS */ url("/fonts/Farsi-Inspired.woff") format("svg"),
+    url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/fonts/Farsi-Inspired.woff")
+      format("woff"); /* Legacy iOS */
 }
 
 h1 {
   color: #292c30;
   font-family: "Farsi-inspired";
-  font-size: 20px;
+  font-size: 40px;
   margin: auto 10px;
   text-align: center;
 }
@@ -26,14 +28,14 @@ h1 {
   font-family: 'EB Garamond', serif;;
 } */
 .detailList {
-  margin: auto 10px;
+  margin: auto 20px;
   padding: 0;
   text-align: center;
   list-style: none;
   color: #292c30;
   opacity: 80%;
   font-family: "Farsi-inspired";
-  font-size: 15px;
+  font-size: 20px;
 }
 /* .mainBox {
   max-width: 600px;
@@ -60,10 +62,13 @@ h1 {
   font-family: "Farsi-inspired";
 }
 .boxTwo {
-  background-color: #60ddea;
+  background-color: #efefef;
   max-width: 300px;
 }
-
+.forecast {
+  display: block;
+  margin: auto;
+}
 .bigThumbnail {
   max-width: 100%;
   display: block;
@@ -92,7 +97,11 @@ h1 {
 .weekday {
   color: #292c30;
   text-align: center;
-  font-family: "Farsi-inspired";
+  font-family: "Farsi-Inspired";
+}
+.forecast-temps {
+  font-family: "Farsi-Inspired";
+  text-align: center;
 }
 .geoloc-button {
   margin: 0px 10px 10px 0px;
