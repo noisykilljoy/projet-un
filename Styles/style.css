@@ -112,8 +112,10 @@ h1 {
   margin: 0px 10px 10px 0px;
 }
 .githublink {
-  font-family: "Farsi-Inspired";
+  font-family: "helvetica";
   color: black;
+  font-size: 7px;
+  margin: 7px auto;
 }
 .active {
   color: #aebfff;
