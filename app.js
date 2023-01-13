@@ -3,6 +3,7 @@ let now = new Date();
 let dateDisplayer = document.querySelector("#date-of-the-day");
 let dateOfTheDay = displayDate();
 dateDisplayer.innerHTML = dateOfTheDay;
+let celsiusTemp = null;
 
 //search engine
 let usersSearchedCity = document.querySelector("#city-search-form");
@@ -60,17 +61,17 @@ function cityChanger(event) {
   axios.get(apiURL).then(weatherFunc);
 }
 
-function cityChangerWithGeolocation(event) {
-  event.preventDefault();
-  function LatLong(position) {
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let apiKey = "2718952144ed077c12e7c160fb6fc351";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-    axios.get(apiURL).then(weatherFunc);
-  }
-  navigator.geolocation.getCurrentPosition(LatLong);
-}
+// function cityChangerWithGeolocation(event) {
+//   event.preventDefault();
+//   function LatLong(position) {
+//     let lat = position.coords.latitude;
+//     let lon = position.coords.longitude;
+//     let apiKey = "2718952144ed077c12e7c160fb6fc351";
+//     let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+//     axios.get(apiURL).then(weatherFunc);
+//   }
+//   navigator.geolocation.getCurrentPosition(LatLong);
+// }
 
 function weatherFunc(response) {
   console.log(response.data);
@@ -156,32 +157,29 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function showFarenheit(event) {
-  event.preventDefault();
-  let tempDisplay = document.querySelector("#temperature");
-  let tempInFarenheit = Math.round((celsiusTemp * 9) / 5 + 32);
-  tempDisplay.innerHTML = tempInFarenheit;
-  let degreeUnit = document.querySelector("#f-or-c");
-  degreeUnit.innerHTML = "˚F";
-  celsiusLink.classList.remove("active");
-  farenheitLink.classList.add("active");
-}
-function showCelsius(event) {
-  event.preventDefault();
-  let tempDisplay = document.querySelector("#temperature");
-  tempDisplay.innerHTML = celsiusTemp;
-  let degreeUnit = document.querySelector("#f-or-c");
-  degreeUnit.innerHTML = "˚C";
-  celsiusLink.classList.add("active");
-  farenheitLink.classList.remove("active");
-}
+// function showFarenheit(event) {
+//   event.preventDefault();
+//   let tempDisplay = document.querySelector("#temperature");
+//   let tempInFarenheit = Math.round((celsiusTemp * 9) / 5 + 32);
+//   tempDisplay.innerHTML = tempInFarenheit;
+//   let degreeUnit = document.querySelector("#f-or-c");
+//   degreeUnit.innerHTML = "˚F";
+//   celsiusLink.classList.remove("active");
+//   farenheitLink.classList.add("active");
+// }
+// function showCelsius(event) {
+//   event.preventDefault();
+//   let tempDisplay = document.querySelector("#temperature");
+//   tempDisplay.innerHTML = celsiusTemp;
+//   let degreeUnit = document.querySelector("#f-or-c");
+//   degreeUnit.innerHTML = "˚C";
+//   celsiusLink.classList.add("active");
+//   farenheitLink.classList.remove("active");
+// }
 
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", showFarenheit);
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
+// let farenheitLink = document.querySelector("#farenheit-link");
+// farenheitLink.addEventListener("click", showFarenheit);
+// let celsiusLink = document.querySelector("#celsius-link");
+// celsiusLink.addEventListener("click", showCelsius);
 
-let celsiusTemp = null;
-let FarenheitTemp = null;
-
-displayForecast();
+// let FarenheitTemp = null;
