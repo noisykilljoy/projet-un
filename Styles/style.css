@@ -2,9 +2,15 @@
   font-family: "FARSI-INSPIRED Regular";
   font-style: normal;
   font-weight: normal;
-  src: local("FARSI-INSPIRED Regular"),
-    url("Farsi-Inspired.woff") format("woff");
+  /* src: local("FARSI-INSPIRED Regular"),
+    url("Farsi-Inspired.woff") format("woff"); */
+  src: url("Farsi-Inspired.woff") format("embedded-opentype"),
+    /* Internet Explorer */ url("Farsi-Inspired.woff") format("woff2"),
+    /* Super Modern Browsers */ url("Farsi-Inspired.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("Farsi-Inspired.woff") format("truetype"),
+    /* Safari, Android, iOS */ url("Farsi-Inspired.woff") format("svg"); /* Legacy iOS */
 }
+
 h1 {
   color: #292c30;
   font-family: "Farsi-inspired";
