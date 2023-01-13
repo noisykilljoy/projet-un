@@ -52,20 +52,29 @@ h1 {
   margin: 50px auto;
 }
 .boxOne {
-  background-color: #efefef;
+  background-image: url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/Thumbnails/forecast/bg.png");
   max-width: 300px;
 }
-.searchBox {
-  background-color: #efefef;
-}
+/* .searchBox > a {
+  background-color: transparent;
+} */
 /* .units {
   font-size: 18px;
   color: #292c30;
   margin: auto 10px;
   font-family: "Farsi-inspired";
 } */
+.nav .navbar-social > a {
+  padding: 0;
+  background-color: transparent;
+}
+.nav > li > a,
+.nav > li > a:focus {
+  background-color: transparent;
+}
 .boxTwo {
-  background-color: #efefef;
+  background-image: url("/Users/vandahtaghdisi/Documents/SheCodes/Challenges/projet-un/Thumbnails/forecast/bg.png");
+
   max-width: 300px;
 }
 .forecast {
