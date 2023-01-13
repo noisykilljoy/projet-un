@@ -61,18 +61,6 @@ function cityChanger(event) {
   axios.get(apiURL).then(weatherFunc);
 }
 
-// function cityChangerWithGeolocation(event) {
-//   event.preventDefault();
-//   function LatLong(position) {
-//     let lat = position.coords.latitude;
-//     let lon = position.coords.longitude;
-//     let apiKey = "2718952144ed077c12e7c160fb6fc351";
-//     let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-//     axios.get(apiURL).then(weatherFunc);
-//   }
-//   navigator.geolocation.getCurrentPosition(LatLong);
-// }
-
 function weatherFunc(response) {
   let city = response.data.name;
   celsiusTemp = Math.round(response.data.main.temp);
@@ -151,30 +139,3 @@ function displayForecast(response) {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-// function showFarenheit(event) {
-//   event.preventDefault();
-//   let tempDisplay = document.querySelector("#temperature");
-//   let tempInFarenheit = Math.round((celsiusTemp * 9) / 5 + 32);
-//   tempDisplay.innerHTML = tempInFarenheit;
-//   let degreeUnit = document.querySelector("#f-or-c");
-//   degreeUnit.innerHTML = "˚F";
-//   celsiusLink.classList.remove("active");
-//   farenheitLink.classList.add("active");
-// }
-// function showCelsius(event) {
-//   event.preventDefault();
-//   let tempDisplay = document.querySelector("#temperature");
-//   tempDisplay.innerHTML = celsiusTemp;
-//   let degreeUnit = document.querySelector("#f-or-c");
-//   degreeUnit.innerHTML = "˚C";
-//   celsiusLink.classList.add("active");
-//   farenheitLink.classList.remove("active");
-// }
-
-// let farenheitLink = document.querySelector("#farenheit-link");
-// farenheitLink.addEventListener("click", showFarenheit);
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", showCelsius);
-
-// let FarenheitTemp = null;
